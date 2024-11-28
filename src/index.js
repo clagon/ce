@@ -1120,13 +1120,13 @@ if (! formula && typeof(require) === 'function') {
         /**
          * Set a row data by rowNumber
          */
-        obj.setRowData = function(rowNumber, data) {
+        obj.setRowData = function(rowNumber, data, force) {
             for (var i = 0; i < obj.headers.length; i++) {
                 // Update cell
                 var columnName = jexcel.getColumnNameFromId([ i, rowNumber ]);
                 // Set value
                 if (data[i] != null) {
-                    obj.setValue(columnName, data[i]);
+                    obj.setValue(columnName, data[i], force);
                 }
             }
         }
